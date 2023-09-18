@@ -12,6 +12,20 @@ public class Ingredients
         quantity = 0;
     }
 
+    public boolean purchase(int count, int bank)
+    {
+        double cost = count * price;
+        if (bank > cost)
+        {
+            quantity += count;
+            return true; // purchase was successful, subtract money
+        }
+        else
+        {
+            return false; //lol no broke
+        }
+    }
+
     public boolean spoiled()
     {
         Random rand = new Random();
