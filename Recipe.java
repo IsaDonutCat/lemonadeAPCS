@@ -2,7 +2,7 @@ import java.lang.Math;
 
 public class Recipe
 {
-    int lemons;
+    int lemons, sugar, ice, lemDiff, sugarDiff,iceDiff;
     int sugar;
     int ice;
 
@@ -16,11 +16,11 @@ public class Recipe
 
     public boolean similar(int lemCt, int sugCt, int iceCt)
     {
-        int lemDiff = Math.abs(lemCt - lemons);
-        int sugarDiff = Math.abs(sugCt - sugar);
-        int iceDiff = Math.abs(iceCt - ice);
+        lemDiff = lemCt - lemons;
+        sugarDiff = sugCt - sugar;
+        iceDiff = iceCt - ice;
 
-        if (lemDiff + sugarDiff + iceDiff > 5)
+        if (Math.abs(lemDif)f + Math.abs(sugarDiff) + Math.abs(iceDiff) > 5)
         {
             return true; // yummy
         }
@@ -30,5 +30,12 @@ public class Recipe
         }
     }
 
-    public String critic{} // comment on what needs to be changed. 
+    public String critic(int temp, ) // comment on what needs to be changed. 
+    {
+        if (temp > 80 && iceDiff > 2)
+        {
+            return "More ice!"
+        }
+        else if ()
+    }
 }
