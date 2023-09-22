@@ -1,29 +1,47 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Ingredients
 {
-    public int quantity;
-    public double price, spoilage;
-
-    public Ingredients (double priceGiven, double spoilageGiven)
+    int quantity;
+    double price, spoilage;
+    String name; 
+    public Ingredients (double priceGiven, double spoilageGiven, String itemName)
     {
         price = priceGiven;
         spoilage = spoilageGiven; //spoilage should be between 0 and 100
         quantity = 0;
+        name = itemName;
     }
 
-    public boolean purchase(int count, int bank)
+    public double purchase(int bank)
     {
-        double cost = count * price;
-        if (bank > cost)
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("You have " + quantity + " " + name + ". Buy more " + name + "? (Y/N)");
+        String ans = input.nextLine();
+
+        if (!(ans.equals("N")))
         {
-            quantity += count;
-            return true; // purchase was successful, subtract money
+            System.out.println("Quantity to Purchase: ");
+            int count = input.nextInt();
+
+            double cost = count * price;
+
+            if (bank > cost)
+            {
+                quantity += count;
+                System.out.println("Purchase was successful! You now have " + quantity + " " + name + ".ss");
+                return bank - cost; // purchase was successful, subtract money
+            }
+            else
+            {
+                System.out.println("Not enough money!");
+                return bank; //lol no broke
+            }
         }
-        else
-        {
-            return false; //lol no broke
-        }
+
+        return -1;
     }
 
     public boolean spoiled()
@@ -31,7 +49,7 @@ public class Ingredients
         Random rand = new Random();
         int random = rand.nextInt(100);
 
-        if (random < spoilage)
+        if (random <= spoilage)
         {
             return true; //spoiled
         }
@@ -40,4 +58,6 @@ public class Ingredients
             return false; //not spoiled
         }
     }
+
+    
 }
