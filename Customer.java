@@ -1,27 +1,29 @@
 public class Customer
 {
     double priceLimit;
-    int bandWagon;
     int ice, lemon, sugar, lemDiff, sugarDiff, iceDiff;
-    int judgyness = 7;
+    int tolerance = 7;
 
-    public void Customer(int iceice, int sour, int sweetie, double priceLim, int wagoner)
+    public Customer()
     {
-        priceLimit = priceLim;
-        bandWagon = wagoner;
-        ice = iceice;
-        lemon = sour;
-        sugar = sweetie;
+        priceLimit = Math.random();
+        ice = 4;
+        lemon = 8;
+        sugar = 3;
         return;
     }
 
-    public boolean similar(int lemCt, int sugCt, int iceCt)
+    public boolean similar(double price, int lemCt, int sugCt, int iceCt)
     {
         lemDiff = lemCt - lemon;
         sugarDiff = sugCt - sugar;
         iceDiff = iceCt - ice;
 
-        if (Math.abs(lemDiff) + Math.abs(sugarDiff) + Math.abs(iceDiff) < judgyness)
+        if (price > priceLimit)
+        {
+            return false;
+        }
+        if (Math.abs(lemDiff) + Math.abs(sugarDiff) + Math.abs(iceDiff) < tolerance)
         {
             return true; // yummy
         }
@@ -31,8 +33,11 @@ public class Customer
         }
     }
 
-    public String critic(int temp) // comment on what needs to be changed. 
+    public String critic(int temp, double price) // comment on what needs to be changed. 
     {
+        if (price > priceLimit)
+            return "$$$";
+
         if (temp > 80 && iceDiff < -2)
         {
             return "More ice!";

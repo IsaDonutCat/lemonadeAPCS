@@ -14,7 +14,7 @@ public class Ingredients
         name = itemName;
     }
 
-    public double purchase(int bank)
+    public double purchase(double bank)
     {
         Scanner input = new Scanner(System.in);
 
@@ -32,15 +32,17 @@ public class Ingredients
             {
                 quantity += count;
                 System.out.println("Purchase was successful! You now have " + quantity + " " + name + ".ss");
+                input.close();
                 return bank - cost; // purchase was successful, subtract money
             }
             else
             {
                 System.out.println("Not enough money!");
+                input.close();
                 return bank; //lol no broke
             }
         }
-
+        input.close();
         return -1;
     }
 
