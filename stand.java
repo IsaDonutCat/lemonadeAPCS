@@ -25,7 +25,7 @@ public class stand {
         Customer oneGuy = new Customer();
         int temp;
         double test;
-        bool opinion;
+        boolean opinion;
         for (int i = 0; i < daysNum; i++)
         {   
             temp = (int) (Math.random() * 40) + 60;
