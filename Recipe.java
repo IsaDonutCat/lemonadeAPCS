@@ -50,6 +50,10 @@ public class Recipe
         return lemons;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getSug()
     {
         return sugar;

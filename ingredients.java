@@ -51,6 +51,10 @@ public class Ingredients
         return -1;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean spoiled()
     {
         Random rand = new Random();

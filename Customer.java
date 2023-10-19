@@ -41,6 +41,12 @@ public class Customer
         }
     }
 
+    
+    /** 
+     * @param temp
+     * @param price
+     * @return String
+     */
     public String critic(int temp, double price) // comment on what needs to be changed. 
     {
         if (price > priceLimit)
