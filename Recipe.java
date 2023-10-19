@@ -41,6 +41,10 @@ public class Recipe
         return;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getLem()
     {
         return lemons;

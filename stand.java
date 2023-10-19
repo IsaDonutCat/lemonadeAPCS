@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class stand {
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args)
     {
         Scanner dayNumInput = new Scanner(System.in);

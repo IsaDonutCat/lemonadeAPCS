@@ -13,6 +13,14 @@ public class Customer
         return;
     }
 
+    
+    /** 
+     * @param price
+     * @param lemCt
+     * @param sugCt
+     * @param iceCt
+     * @return boolean
+     */
     public boolean similar(double price, int lemCt, int sugCt, int iceCt)
     {
         lemDiff = lemCt - lemon;

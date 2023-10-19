@@ -14,6 +14,11 @@ public class Ingredients
         name = itemName;
     }
 
+    
+    /** 
+     * @param bank
+     * @return double
+     */
     public double purchase(double bank)
     {
         Scanner input = new Scanner(System.in);
